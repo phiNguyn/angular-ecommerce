@@ -1,0 +1,57 @@
+<header class="header bt">
+   
+    
+  <div class="header-main relative">
+    
+    <a [routerLink]="['']" class="header-logo">
+      
+      <img src="../assets/images/IPUN.svg" alt="" />
+    </a>
+   
+    <nav class="nav">
+      
+      <div class="menu" title="Điều hướng">
+        <a [routerLink]="['login']"  class="menu-span">
+          <span><i class="fa-regular fa-user fa-xl"></i></span>
+          <span class="data-nameUser" style="margin-left: 0.5rem; display: inline;">Đăng nhập</span>
+          <button class="logout">đăng xuất</button>
+        </a>
+      </div>
+      
+      <div class="header-order">
+        
+        <div class="header-order_link order"><a [routerLink]="['products']">ĐẶT BÁNH</a></div>
+        <div class="header-order_link cart">
+          <a [routerLink]="['cart']">
+            <span class="relative"><img src="../assets/images/cart.svg" alt=""><span class="sl"></span> </span>
+            <span style="margin-left: 5px;">Giỏ</span>
+          </a>
+         
+        </div>
+      </div>
+    </nav>
+
+<img src="" alt="" width="">
+  </div>
+
+ 
+  <div class="slide grid-2 bt bb">
+   
+    <!-- menu -->
+
+   
+   <app-categories-list class="flex slide-list"></app-categories-list>
+      
+     <!-- end menu -->
+     
+   
+      <form  method="post" class="form-search">
+        <div class="form flex">
+          <input class="input" placeholder="Tìm kiếm ..." value="" required="" type="text">
+          <span class="input-border"></span>
+          <button class="btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </form>
+     
+  </div>
+</header>

@@ -1,0 +1,36 @@
+<section id="a">
+  <div class="banhSN">  <!--Bánh SINH NHẬT-->
+    <div class="banhSN-content">
+        <h2 class="banhSN-content_h2">Bánh sinh nhật</h2>
+        <div class="banhSN-content_text">
+            <span>Sản phẩm đặc trưng của LaFuong Pastry là bánh Entremet – dòng bánh lạnh cao cấp nhất của Pháp, với sự hài hoà của các tầng hương vị và kết cấu đặc biệt trong từng chiếc bánh.</span>
+        </div>
+    </div>
+    
+  </div>
+<div class="arrange" style="width: fit-content;margin-left: auto; padding-bottom: 10px;">
+<select name="" id="arrange">
+<option  disabled selected>Sắp theo giá sản phẩm</option>
+
+<option value="asc" >Giá tăng dần</option>
+<option value="desc">Giá giảm dần</option>
+</select>
+</div>
+  
+  <div class="banhSN-eat grid-4 bt " id="listProduct">
+    <div  class="relative br bb banhSN-eat-link" *ngFor="let item of products">
+      <div class="banhSN-eat-list">
+        <div class="banhSN-eat-h2">{{item.name}}</div>
+        <div class="banhSN-eat-name">{{item.material}}</div>
+        <div class="banhSN-eat-prce">{{item.price}} ₫</div>
+      </div>
+      <div class="banhSN-eat-img relative pb-100">
+        <div class="banhSN-eat-img-item">
+          <img loading=lazy src="../assets/images/{{item.img}}" alt="">
+        </div>
+      </div>
+      <a [routerLink]="['/',item.slug]"  class="banhSN-eat-more"><span>Xem thêm</span></a>
+      <button class="add-fast add btn-buy" data-id="${item._id}">Thêm sản phẩm</button>
+    </div>
+  </div>
+</section>

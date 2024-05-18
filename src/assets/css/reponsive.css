@@ -1,0 +1,82 @@
+@media screen  and (max-width: 1024px) {
+   .order{
+    display: none;
+   }
+   .banhSN-eat-name{
+    font-size: 14px;
+}
+.banhSN-eat-more {
+    padding: 0 18px 18px;
+  
+ 
+}
+.add{
+    padding: 8px 12px !important;
+}
+}
+@media screen and (max-width: 768px) {
+
+    .data-nameUser{
+        display: none !important;
+        animation-duration: 0.5s ;
+       }
+
+    .slide{
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        
+    }
+    .slide-list{
+        display: none !important;
+     }
+
+     .form-search{
+        width: 100%;
+     }
+   
+    .about{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+       
+    
+    }
+    .about-right{
+        padding-bottom: 100%;
+        border-top: 1px solid black;
+    }
+    .about-left{
+        border-right: 0 !important;
+    }
+    .banh-ngon-list{
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .all-products-link a {
+        padding: 8px 12px;
+       
+    }
+
+    .footer-ul-list{
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        gap: 20px;
+
+    }
+    .banhSN-eat{
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        
+    }
+    .banhSN-content_text{
+        font-size: 1rem;
+    }
+    .banhSN-eat-h2{
+        font-size: 1rem;
+    }
+    .banhSN-eat-name{
+        font-size: 12px;
+    }
+
+    .banhSN-eat-more {
+        padding: 0 16px 16px;
+      
+     
+    }
+
+}
