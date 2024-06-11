@@ -3,7 +3,7 @@
     
   <div class="header-main relative">
     
-    <a [routerLink]="['']" class="header-logo">
+    <a [routerLink]="['']" class="header-logo" >
       
       <img src="../assets/images/IPUN.svg" alt="" />
     </a>
@@ -11,11 +11,15 @@
     <nav class="nav">
       
       <div class="menu" title="Điều hướng">
-        <a [routerLink]="['login']"  class="menu-span">
+        
+        <a *ngIf="!isLogin" [routerLink]="['login']"  class="menu-span">
           <span><i class="fa-regular fa-user fa-xl"></i></span>
-          <span class="data-nameUser" style="margin-left: 0.5rem; display: inline;">Đăng nhập</span>
-          <button class="logout">đăng xuất</button>
+          <span  class="data-nameUser" style="margin-left: 0.5rem; display: inline;">Đăng nhập</span> 
         </a>
+        <div *ngIf="isLogin" class="menu-span">
+          <p-menu  #menu [model]="items" [popup]="true" >cccc</p-menu>
+          <span (click)="menu.toggle($event)"><i class="fa-regular fa-user fa-xl"></i></span>
+        </div>
       </div>
       
       <div class="header-order">
@@ -23,7 +27,7 @@
         <div class="header-order_link order"><a [routerLink]="['products']">ĐẶT BÁNH</a></div>
         <div class="header-order_link cart">
           <a [routerLink]="['cart']">
-            <span class="relative"><img src="../assets/images/cart.svg" alt=""><span class="sl"></span> </span>
+            <span class="relative"><img src="../assets/images/cart.svg" alt=""><span class="sl">{{cartService.cartLength()}}</span> </span>
             <span style="margin-left: 5px;">Giỏ</span>
           </a>
          
@@ -31,7 +35,6 @@
       </div>
     </nav>
 
-<img src="" alt="" width="">
   </div>
 
  

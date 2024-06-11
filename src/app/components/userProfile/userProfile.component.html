@@ -1,0 +1,54 @@
+<div style="width: 100% ; max-width: 1200px; margin: 0 auto ; display: grid; grid-template-columns: 20% 80%; padding: 20px;" >
+  <div style="display: flex; flex-direction: column; row-gap: 20px;">
+    <span>Lịch sử đặt hàng</span>
+    <span>Thông Tin</span>
+  </div>
+
+  <div style="width: 100%;" >
+    <div *ngIf="userInfo" style="width: 100%; display: grid;grid-template-columns: repeat(2, minmax(0, 1fr)) !important;  justify-content: center; align-items: center; column-gap: 20px;">
+      <div style="display: flex; justify-content: center; flex-direction: column;">
+        <h3>{{ userInfo.name}}</h3>
+        <div >Khách hàng</div>
+        <h3 style="font-weight: bold; color: rgb(2, 182, 2);">Chỉnh sửa thông tin</h3>
+      </div>
+      <div style="display: flex; flex-direction: column; row-gap: 10px; ">
+        <h3>Địa chỉ đặt hàng</h3>
+        <div>{{userInfo.name}}</div>
+        <div>{{userInfo.address}}</div>
+        <h3>{{userInfo.email}}</h3>
+        <h3>{{userInfo.phone}}</h3>
+        <a routerLink="['/edit']"   style="color: rgb(2, 182, 2);">Sửa địa chỉ</a>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: flex; justify-content: space-between;">
+        <h3>Lịch sử đặt hàng</h3>
+        <button class="add" style="width: fit-content;">Xem tất cả</button>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 20px;">
+        <table style="width: 100%; border: 1px solid black ; border-radius: 8px; padding: 5px;">
+          <thead style="font-size: 20px; font-weight: bold;text-align:left; ">
+            <th>Mã Đơn Hàng</th>
+            <th>Ngày Đặt</th>
+            <th>Tổng Đơn Hàng</th>
+            <th>Trạng Thái</th>
+          
+          </thead>
+          <tbody >
+            <tr *ngFor="let item of listOrder">
+              <td style="text-align: left;">{{item._id}}</td>
+              <td style="text-align: left;">{{formatDate(item.order_date)}}</td>
+              <td style="text-align: left;">{{item.total_amount}}</td>
+              <td style="text-align: left;" >
+                <span style="color: green;" *ngIf="item.order_status === 1">Đã xác nhận</span>
+                <span *ngIf="item.order_status === 2">Đã gửi hàng</span>
+                <span *ngIf="item.order_status === 3">Đã nhận hàng</span>
+                <span *ngIf="item.order_status === 4">Đã hủy</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

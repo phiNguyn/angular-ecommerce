@@ -1,35 +1,37 @@
-<section class="relative grid-2 detail" id="pro-detail">
+<section class="relative grid-2 detail" id="pro-detail" *ngIf="productDetail">
   <div class="detail-left br bb">
     <div class="relative detail-left-item">
-      <img src="http://localhost:3000/images/${sanpham.img}" alt="" id="anh" />
+      <img src="../assets/images/{{productDetail.img}}" alt="" id="anh" />
     </div>
     <div class="detail-left-album bt bb br">
-      <img onclick="chonAnh(this)" src="http://localhost:3000/images/${sanpham.img}" alt="" />
-      <img src="http://localhost:3000/images/${sanpham.img}" alt="" />
-      <img src="http://localhost:3000/images/${sanpham.img}" alt="" />
-      <img src="http://localhost:3000/images/${sanpham.img}" alt="" />
-      <img src="http://localhost:3000/images/${sanpham.img}" alt="" />
+
+      <img src="../assets/images/{{productDetail.img}}" alt="" />
+      <img src="../assets/images/{{productDetail.img}}" alt="" />
+      <img src="../assets/images/{{productDetail.img}}" alt="" />
+      <img src="../assets/images/{{productDetail.img}}" alt="" />
+      <img src="../assets/images/{{productDetail.img}}" alt="" />
     </div>
   </div>
 
   <div class="detai-right bb">
     <div class="detai-right-tag">
-      <a href=""></a>
+      <a href="">{{productDetail.category.categoryName}}</a>
     </div>
-    <h1>sanpham.name</h1>
+    <h1>{{productDetail.name}}</h1>
     <div class="detai-right-btn" id="detai-right">
       <span class="flex mr-4">
-        <button class="minus btn">-</button>
-        <span class="number">1</span>
-        <button class="plus btn">+</button>
+        <button (click)="changeQuantity(quantity.value, 'decrement')" class="minus btn">-</button>
+        <input type="number" value="1" #quantity min="1" max="5" step="1" class="number">
+        <button (click)="changeQuantity(quantity.value, 'increment')" class="plus btn">+</button>
+        
       </span>
-      <button class="add btn-primary btn-buy" data-id="${sanpham._id}">
-        Thêm vào giỏ • sanpham.price đ
+      <button class="add btn-primary btn-buy" (click)="addCart(quantity.value)">
+        Thêm vào giỏ • {{productDetail.price}} đ
       </button>
     </div>
 
     <div class="detai-right-content">
-      <span class="detai-right-content-text">sanpham.material</span>
+      <span class="detai-right-content-text">{{productDetail.material}}</span>
       <span class="">
         <p>
           Một chiếc bánh tươi mát với lớp mousse làm từ xoài tươi có vị ngọt

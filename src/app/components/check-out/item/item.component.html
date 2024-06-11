@@ -1,0 +1,10 @@
+<div class="checkout-right-box bb" *ngFor="let item of cart">
+  <div class="bd-all" style="margin-right: 20px;">
+    <img src="../assets/images/{{ item.img }}" alt="" width="100">
+  </div>
+  <div style="display: flex; flex-direction: column;">
+    <span class="checkout-right-name">{{ item.name }}</span>
+    <span class="checkout-right-sl">X {{ item.quantity }}</span>
+  </div>
+  <span class="pay-price">{{ item.price * item.quantity }} đ</span>
+</div>

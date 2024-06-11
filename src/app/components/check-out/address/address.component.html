@@ -1,0 +1,42 @@
+<div class="gap-50px mt-6 grid-2">
+  <div class="">
+    <select [(ngModel)]="cityID" (change)="onCityChanged()">
+      <option selected value="">Tỉnh / Thành Phố</option>
+      <option value="" *ngFor="let item of city" [value]="item.id">
+        {{ item.name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="">
+    <select [(ngModel)]="districtId" (change)="onDistrictChanged()">
+      <option selected value="">Quận / Huyện</option>
+      <option value="" *ngFor="let item of districts" [value]="item.id">
+        {{ item.name }}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div class="mt-6">
+  <select name="" id="">
+    <option selected value="">Phường / Xã</option>
+    <option *ngFor="let item of wards" [value]="item.name">
+      {{ item.name }}
+    </option>
+  </select>
+</div>
+
+<!-- <div class="padding-all-2rem">
+  <span>Phương thức thanh toán</span> <br />
+  <div class="mt-6">
+    <input type="radio" name="pttt" value="Tiền Mặt" checked /> Tiền Mặt
+    <br />
+    <input type="radio" name="pttt" value="Ví điện tử" /> Ví điện tử <br />
+    <input type="radio" name="pttt" value="Chuyển khoản" /> Chuyển khoản
+    <br />
+    <input type="radio" name="pttt" value="Thanh toán online" /> Thanh toán
+    online <br />
+  </div>
+</div> -->
+<!-- end checkout-left -->

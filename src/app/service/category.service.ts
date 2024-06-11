@@ -7,6 +7,8 @@ export class CategoryService {
   constructor(private httpClient: HttpClient) { }
   
   getAll() {
-    return this.httpClient.get(`${this.url}/categories`)
+    return this.httpClient.get(`${this.url}/categories/home`)
   }
+
+  
 }

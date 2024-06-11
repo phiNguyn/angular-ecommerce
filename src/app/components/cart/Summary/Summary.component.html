@@ -1,0 +1,13 @@
+<div class="cart-right ">
+
+  <div class="absolute-center">
+    <h1>Tổng đơn hàng</h1>
+    <div class="banhSN-content_h2 ">{{Summary()}}</div>
+    <a *ngIf="Summary()!=0" routerLink="/check-out"><button class="add btn-primary mt-4">Thanh toán</button></a>
+    <!-- <a href="index.php?page=checkout"><button class="add margin-0">Thanh toán</button></a> -->
+
+  </div>
+
+
+<button (click)="clear()" class="absolute-bottom ">Xóa tất cả</button>
+</div>

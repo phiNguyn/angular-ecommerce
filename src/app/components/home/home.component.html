@@ -20,7 +20,7 @@
   <p class="about-left_p">Hãy một lần nếm thử bánh của LaFuong để cảm nhận những tình cảm và nỗ lực của chúng tôi, tất cả nằm ở sự hoà quyện của hương vị và kết cấu đặc biệt trong từng chiếc bánh.</p>
   <a class="about-left_link"href="#">VỀ IPUN</a>
 </div>
-<div class="about-right"><img src="../assets/images/about-banh.png" alt=""></div>
+<div class="about-right"><img src="/assets/images/about-banh.png" alt=""></div>
 </section>
 
 
@@ -30,7 +30,7 @@
   <h2 class="mota-h2">Sản phẩm</h2>
   <p class="mota-nd_p mt-4">Sản phẩm đặc trưng của Ipun là bánh Entremet – dòng bánh lạnh cao cấp nhất của Pháp, với sự hài hòa của các tầng hương vị và kết cấu đặc biệt trong từng chiếc bánh.</p>
   <div class="mota-link mt-6">
-    <a class="" href="sanpham.html">XEM TẤT CẢ</a>
+    <a class="" [routerLink]="['/products']">XEM TẤT CẢ</a>
   </div>
 </div>
 
@@ -40,8 +40,8 @@
     <div class="banh-ngon-list_item" *ngFor="let item of productHot">
       <div class="ani"><span>{{item.name}}</span><p>{{item.material}}</p></div>
       <div class="banh-ngon-list_absolute">
-        <img src="../assets/images/{{item.img}}" alt="">
-        <a class="banh-ngon_link">Xem thêm</a>
+        <img src="/assets/images/{{item.img}}" alt="">
+        <a [routerLink]="['/product',item._id]" class="banh-ngon_link">Xem thêm</a>
       </div>
         <button class="add btn-buy add-fast" data-id="${item._id}" style="width:fit-content">Thêm sản phẩm</button>
     </div>
@@ -58,7 +58,7 @@
   <p class="about-left_p">Từ vải và dâu rừng, trà Earl Grey và cam hay xoài và lá dứa.., những chiếc bánh Entremet của LaFuong là sự kết hợp sáng tạo của nhiều tầng hương vị tự nhiên và mới lạ. Dù bạn là ai, chúng tôi mong rằng, bạn sẽ luôn tìm được chiếc bánh phù hợp với khẩu vị của riêng mình tại LaFuong.</p>
   <a class="about-left_link"href="#">XEM SẢN PHẨM</a>
 </div>
-<div class="about-right"><img src="../assets/images/sangtao1.png" alt=""></div>
+<div class="about-right"><img src="/assets/images/sangtao1.png" alt=""></div>
 </section>
 
 <section class="about bt bb ">
@@ -68,5 +68,5 @@
   <p class="about-left_p">Từ chiếc hộp, cây nến, tấm bưu thiệp hay cách chúng tôi trao tới bạn tận tay món quà ấy, đều sẽ được LaFuong chuẩn bị thật chu đáo.</p>
   <a class="about-left_link"href="#">CÁCH ĐẶT BÁNH</a>
 </div>
-<div class="about-right"><img src="../assets/images/monqua1.png" alt=""></div>
+<div class="about-right"><img src="/assets/images/monqua1.png" alt=""></div>
 </section>

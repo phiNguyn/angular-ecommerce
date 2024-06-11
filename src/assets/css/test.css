@@ -7,20 +7,6 @@
     width: var(--width-of-input);
    }
 
-    .success  {
-      
-    border-color: #09c372 !important;
-}
-
- .eror {
-  border-color: #ff3860 !important;
-}
-.form .eror {
-  position:  absolute;
-  bottom: -25px; right: 0;
-  color: #ff3860;
-  font-size: 12px;
-}
    /* styling of Input */
    .input {
     color: #000000;

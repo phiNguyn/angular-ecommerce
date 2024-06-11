@@ -1,0 +1,25 @@
+<div class="cart-left" style=" border-bottom: 1px dashed ;" *ngFor="let item of cart">
+  <img class="bd-all" src="../assets/images/{{item.img}}" alt="" width="auto">
+  <div class="cart-left-content  ">
+
+    <a href="#">
+      <h1 style="font-size: 22px;font-weight: bold;text-transform: uppercase;" class="">{{item.name}}</h1>
+    </a>
+
+    <span class=""> Giá: {{item.price}} VND </span>
+    <span class=""> Số lượng {{item.quantity | number}} </span>
+    
+    <span class="flex-center cart-left-content-btn">
+      <button class="minus btn" data-id="${item._id}">-</button>
+      <input type="number" [(ngModel)]="item.quantity" min="1" max="5" class="number">
+      <button class="plus btn" data-id="${item._id}">+</button>
+    </span>
+  </div>
+
+  <div class="cart-left-last">
+    <div style="font-size: 22px;font-weight: bolder;" class="flex-center">{{format(item.price*item.quantity)}}</div>
+    <button (click)="deleteCart(item._id)" class="btn-icon del-pro"><i data-id="${item._id}"
+        class="fa-regular fa-trash-can fa-2xl  del-pro"></i></button>
+
+  </div>
+</div>

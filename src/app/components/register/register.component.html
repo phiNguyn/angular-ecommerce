@@ -1,67 +1,61 @@
-<section class=" bb" style="height: auto;">
+<section class="bb" style="height: auto">
   <!-- start div about-left -->
   <div class="about-left padding-top-bottom">
-  <!-- start div about-left -->
-  
-      <div class="login-box bd-all">
-        
-    
-        <h2>Đăng Ký</h2>
-        
-        <form  id="formSignUp"   >
-          <div class="form">
-            <label>Họ tên</label>
-            
-              
-              <input class="input " id="username" name="username"  type="text">
-              <span class="input-border"></span>
-            
-            <span  class="eror"></span>
+    <!-- start div about-left -->
+
+    <div class="login-box bd-all">
+      <h2>Đăng Ký</h2>
+
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="form">
+          <label>Họ tên</label>
+          <input class="input" formControlName="name" type="text" />
+          <span class="input-border"></span>
+          <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+            <small *ngIf="registerForm.get('name')?.errors?.['minlength']">Name must be at least 6 characters long.</small>
           </div>
-         
-          <div class="form mt-4">
-            <label>Email</label>
-            <input class="input" id="email" name="email" >
-            <span class="input-border"></span>
-            <span  class="eror" ></span>
-  
+        </div>
+
+        <div class="form mt-4">
+          <label>Email</label>
+          <input class="input" formControlName="email" />
+          <span class="input-border"></span>
+
+          <div *ngIf="
+              registerForm.get('email')?.hasError('email') &&
+              registerForm.get('email')?.touched
+            ">
+            <small style="color: red">Email Không hợp lệ</small>
           </div>
-  
-          <!-- <div class="form mt-4">
-            <label>Số điện thoại</label>
-            <input class="input" id="phone" name="phone"   type="number">
-            <span class="input-border"></span>
-            <span  class="eror" ></span>
-  
-          </div> -->
-  
-          
-  
-          <div class="form mt-4">
-            <label>Mat Khau</label>
-            <input class="input" id="pass" name="pass"   type="password">
-            <span class="input-border"></span>
-            <span  class="eror" ></span>
-  
-          </div>
-  
+        </div>
+
+        <div class="form mt-4">
+          <label>Mat Khau</label>
+          <input class="input" type="password" formControlName="pass" />
+          <span class="input-border"></span>
+          <div *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirmPass')?.touched">
+          <small>Mật Khẩu  không khớp</small></div>
+        </div>
+
+
+        <div class="form mt-4">
+          <label>Nhập lại mật khẩu</label>
+          <input class="input" type="password" formControlName="confirmPass" />
+          <span class="input-border"></span>
          
-  
-            
-  
-          <button type="submit"   class="add btn-primary mt-6">Đăng Ký</button>
-        </form>
-  
-       
-      </div>
-  
-      <div>
-        <h3 class="mt-6 text-center">Đã có tài khoản</h3>
-         <a class="add mt-6" [routerLink]="['/register']">Đăng nhập</a>
-         
-       </div>
-  <!-- end div about-left -->
+        </div>
+
+        <button [disabled]="registerForm.invalid" type="submit" class="add btn-primary mt-6">
+          Đăng Ký
+        </button>
+      </form>
+    </div>
+
+    <div>
+      <h3 class="mt-6 text-center">Đã có tài khoản</h3>
+      <a class="add mt-6" [routerLink]="['/register']">Đăng nhập</a>
+    </div>
+    <!-- end div about-left -->
   </div>
   <!-- end div about-left -->
-  
-          </section>
+</section>
